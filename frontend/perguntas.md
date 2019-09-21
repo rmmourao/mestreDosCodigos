@@ -22,7 +22,7 @@
 
 ***
 
-## 3 - qual o valor da variavél name após a execução da função?
+## 3 - qual o valor da variável name após a execução da função?
 
     content = {
         name: "John",
