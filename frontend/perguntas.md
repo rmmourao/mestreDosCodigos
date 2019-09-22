@@ -4,7 +4,7 @@
 
 **Resposta:**
 
-var
+**var**
 - é usado para declarar uma variável (um container para alocação de dados);
 - através do comando var podemos declarar variáveis de escopos de função (variáveis declaradas dentro de uma função e que só podem ser usadas dentro daquela função) e global (variáveis declaradas fora de qualquer função e que podem ser usadas em qualquer parte do código):
 
@@ -36,14 +36,14 @@ var
 
 - uma variável declarada com var pode ter seu valor redeclarado em qualquer local do código.
 
-let
+**let**
 - assim como *var* é usado para declarar variáveis;
 - contudo, além de declarar variáveis de escopos global e de função também declara variáveis de escopo de bloco (a variável é declarada dentro de um bloco de código e só pode ser acessada dentro aquele bloco);
 
-        var x = 2 // Escopo global
+        let x = 2 // Escopo global
 
         function myFunction() {
-            var y = 3 // Escopo de função
+            let y = 3 // Escopo de função
             
             {
                 let z = 4 // Escopo de bloco
@@ -77,7 +77,7 @@ let
 
 - entretanto, pode ter o seu valor redeclarado com *let* em um escopo ou bloco de código diferente.
 
-const
+**const**
 
 - também é usado para declarar variáveis de forma similar à *let*, as principais diferenças sendo que uma variável declarada com *const* deve ter um valor atribuido em sua declaração e uma vez que seja atribuído um valor, este não pode ser reatribuído:
 
@@ -89,7 +89,7 @@ const
 
 - apesar do nome *const*, não define uma constante;
 
-- é possivel incluir e alterar propriedades de um objeto declarado com *const*, porém não é possível o objeto:
+- é possivel incluir e alterar propriedades de um objeto declarado com *const*, porém não é possível reatribuir um o objeto:
 
         const pessoa = {nome: 'Fulano', sobrenome: 'Ciclano', idade: 30}
         
@@ -119,7 +119,7 @@ const
 
 ( ) Arrow function são mais rápidas
 
-(X) Arrow function podem ser instanciadas
+( ) Arrow function podem ser instanciadas
 
 ( ) Arrow function não guardam escopo
 
