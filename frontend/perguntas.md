@@ -4,19 +4,122 @@
 
 **Resposta:**
 
+var
+- é usado para declarar uma variável (um container para alocação de dados);
+- através do comando var podemos declarar variáveis de escopos de função (variáveis declaradas dentro de uma função e que só podem ser usadas dentro daquela função) e global (variáveis declaradas fora de qualquer função e que podem ser usadas em qualquer parte do código):
+
+        var globalVariable = 'A global variable' // Escopo global
+
+        function myFunction() {
+            var functionVariable = 'A function variable' // Escopo de função
+            
+            console.log(globalVariable) // A global variable
+            console.log(functionVariable) // A function variable
+        }
+
+        console.log(globalVariable) // A global variable
+        console.log(functionVariable) // functionVariable is not defined
+
+- se redeclararmos uma variável global dentro de uma função, alterando o seu valor, o valor dessa variável ira permanecer alterado fora daquela função:
+
+        var name = 'Rodrigo'
+
+        console.log(name) // Rodrigo
+
+        function lastName() {
+            var name = 'Mourão'
+            
+            console.log(name) // Mourão
+        }
+
+        console.log(name) // Mourão
+
+- uma variável declarada com var pode ter seu valor redeclarado em qualquer local do código.
+
+let
+- assim como *var* é usado para declarar variáveis;
+- contudo, além de declarar variáveis de escopos global e de função também declara variáveis de escopo de bloco (a variável é declarada dentro de um bloco de código e só pode ser acessada dentro aquele bloco);
+
+        var x = 2 // Escopo global
+
+        function myFunction() {
+            var y = 3 // Escopo de função
+            
+            {
+                let z = 4 // Escopo de bloco
+                console.log(x) // 2
+                console.log(y) // 3
+                console.log(z) // 4
+            }
+
+            console.log(x) // 2
+            console.log(y) // 3
+            console.log(z) // block is not defined
+        }
+
+        console.log(x) // 2
+        console.log(y) // local is not defined
+        console.log(z) // block is not defined
+
+- ao redeclararmos uma variável global dentro de uma função ou bloco usando *let*, se alterarmos o seu valor, essa alteração só irá valer para aquela função ou bloco de código:
+
+        var i = 2 // Escopo global
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i) // 0, 1, 2, 3, 4
+        }
+
+        console.log(i) // 2
+
+- uma variável declarada com *let* não pode ter seu valor redeclarado com *var* ou *let* no mesmo escopo ou bloco de código;
+
+- também não pode ter seu valor redeclarado com *var* em um escopo ou bloco de código diferente;
+
+- entretanto, pode ter o seu valor redeclarado com *let* em um escopo ou bloco de código diferente.
+
+const
+
+- também é usado para declarar variáveis de forma similar à *let*, as principais diferenças sendo que uma variável declarada com *const* deve ter um valor atribuido em sua declaração e uma vez que seja atribuído um valor, este não pode ser reatribuído:
+
+        const x = 5
+        x = 6 // Uncaught TypeError: Assignment to constant variable.
+        x = x + 5 // Uncaught TypeError: Assignment to constant variable.
+
+        const y // Uncaught SyntaxError: Missing initializer in const declaration
+
+- apesar do nome *const*, não define uma constante;
+
+- é possivel incluir e alterar propriedades de um objeto declarado com *const*, porém não é possível o objeto:
+
+        const pessoa = {nome: 'Fulano', sobrenome: 'Ciclano', idade: 30}
+        
+        pessoa.idade = 35
+        
+        pessoa.nacionalidade = 'Brasileiro'
+
+        console.log(pessoa) // {nome: "Fulano", sobrenome: "Ciclano", idade: 35, nacionalidade: "Brasileiro"}
+
+        pessoa = {nome: 'João', sobrenome: 'Silva', idade: 23, nacionalidade: 'Português'} // Uncaught TypeError: Assignment to constant variable.
+
+- assim como acontece com objetos declarados com *const*, um vetor declarado com *const* pode receber um novo elemento ou ter um elemento alterado, mas não pode ser reatribuído;
+
+- uma variável declarada com *const* não pode ter seu valor redeclarado por *var* ou *let* em nenhum local do código;
+
+- entretanto pode ter o seu valor redeclarado em um escopo ou bloco de código diferente. 
+
 ***
 
 ## 2 - Assinale a(s) diferença(s) entre Funções normais e Arrow Functions.
 
 **Opções:**
 
-( ) Funções normais não guardam escopo
+(X) Funções normais não guardam escopo
 
 ( ) Funções normais guardam escopo
 
 ( ) Arrow function são mais rápidas
 
-( ) Arrow function podem ser instanciadas
+(X) Arrow function podem ser instanciadas
 
 ( ) Arrow function não guardam escopo
 
@@ -48,7 +151,7 @@
 
 ( ) James
 
-( ) Walter
+(X) Walter
 
 ***
 
@@ -75,7 +178,7 @@
 
 **Opções:**
 
-( ) The event 04/02/2019 will take place on Event Test
+(X) The event 04/02/2019 will take place on Event Test
 
 ( ) The event undefined will take place on undefined
 
@@ -177,6 +280,13 @@
 
 **Resposta:**
 
+Hoisting é o comportamento padrão do javaScript de mover, durante a interpretação do código, as declarações de variáveis para o topo/início do escopo, dessa forma variáveis declaradas com *var* podem ser usadas ou atribuídas antes de serem declaradas.
+
+É importante lembrar que:
+- hoisting só funciona com variáveis declaradas com *var*, usar ou atribuir variáveis declaradas com *let* ou *const* antes delas serem declaradas ira causar um erro;
+- somente as declarações de variáveis são movidas para o início do código, as variáveis ainda precisam ser atribuídas antes que possam ser usadas;
+- se o modo estrito do JavaScript estiver sendo usado (use-strict), hoisting não irá funcionar.
+
 ***
 
 ## 20 - Em um ambiente do browser. Qual o valor do this utilizando "use-strict"?
@@ -187,7 +297,7 @@
 
 ( ) global
 
-( ) undefined
+(X) undefined
 
 ( ) null
 
@@ -197,12 +307,12 @@
 
 **Opções:**
 
-( ) No ínicio do meu código
+(X) No ínicio do meu código
 
 ( ) No inicio do block if
 
 ( ) No inicio de um loop
 
-( ) no inicio de uma função
+(X) no inicio de uma função
 
 ***
