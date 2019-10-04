@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+}
+
+.header {
+  width: 100%;
+  height: 10%;
+  border: solid 1px red;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+  .header__logo {
+    background: grey;
+    width: 20%;
+    height: 100%;
+  }
+
+  .header__nav {
+    background: greenyellow;
+    width: 20%;
+    height: 100%;
+  }
+
+    .header__nav_element {}
+  
+  .header__user {
+    background: purple;
+    width: 20%;
+    height: 100%;
+  }
+
+.featured {
+  width: 100%;
+  height: 75%;
+  border: solid 1px blue;
+}
+
+.carousel {
+  width: 100%;
+  height: 20%;
+  border: solid 1px green;
+}
+
+.footer {
+  width: 100%;
+  height: 5%;
+  border: solid 1px brown;
+  position: absolute;
+}
