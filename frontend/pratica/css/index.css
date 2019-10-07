@@ -19,13 +19,3 @@ body {
   width: 100%;
   height: 100vh;
 }
-
-.featured {
-  grid-area: featured;
-  width: 100%;
-}
-
-.carousel {
-  grid-area: carousel;
-  width: 100%;
-}

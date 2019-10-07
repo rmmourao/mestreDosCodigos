@@ -1,0 +1,4 @@
+.featured {
+  grid-area: featured;
+  width: 100%;
+}
