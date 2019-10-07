@@ -1,0 +1,32 @@
+.header {
+  grid-area: header;
+  display: grid;
+  grid-template: "header__logo header__nav . header__user" 100%
+  / 25% 24% 24% 24%;
+  column-gap: 1%;
+  width: 100%;
+  background-color: var(--dark-bg-color);
+}
+
+  .header__logo {
+    grid-area: header__logo;
+    width: 100%;
+    height: 100%;
+    background: grey;
+  }
+
+  .header__nav {
+    grid-area: header__nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: greenyellow;
+  }
+  
+  .header__user {
+    grid-area: header__user;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: purple;
+  }
